@@ -138,30 +138,102 @@
     font-family: 'Amaranth', sans-serif;
     color: #ffffff; /* White Font Color */
     padding: 100px 20px;
-    text-align: center;
   }
 
   .about-container {
-    max-width: 950px;
+    max-width: 1100px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Ensures responsiveness on mobile */
+  }
+
+  .about-image-container {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .about-image-container img {
+    width: 100%;
+    border-radius: 15px; /* Subtle rounding for a modern look */
+    border: 1px solid #333333;
+    box-shadow: 0 10px 30px rgba(217, 200, 163, 0.1); /* Soft gold glow */
+  }
+
+  .about-content {
+    flex: 1.5;
+    min-width: 300px;
   }
 
   .about-header {
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     letter-spacing: 1px;
     color: #ffffff;
   }
 
   .about-body-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.8;
-    margin-bottom: 30px;
-    opacity: 0.95; /* High visibility white */
-    text-align: justify;
+    margin-bottom: 25px;
+    opacity: 0.95;
+    text-align: left;
   }
 
+  .name-highlight {
+    color: #d9c8a3; 
+    font-weight: 700;
+  }
+
+  .cta-paragraph {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    border-top: 1px solid #333333;
+    padding-top: 20px;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .about-body-text {
+      text-align: center;
+    }
+  }
+</style>
+
+<section class="about-me-section">
+  <div class="about-container">
+    
+    <div class="about-image-container">
+      <img src="IMG_1237.PNG" alt="Muhammed Sinan K - Digital Marketer in Malappuram">
+    </div>
+
+    <div class="about-content">
+      <h2 class="about-header">About Me</h2>
+      
+      <p class="about-body-text">
+        I’m <span class="name-highlight">Muhammed Sinan K</span>, a results-driven freelance digital marketer and graphic designer based in <span class="name-highlight">Malappuram</span>. I specialize in helping startups and e-commerce brands scale through strategic SEO, SEM, and high-impact Social Media Marketing.
+      </p>
+
+      <p class="about-body-text">
+        My approach blends creative graphic design with analytical marketing strategies. Whether I'm redesigning a corporate website or optimizing a lead-gen campaign, my focus remains on one thing: <strong>measurable growth.</strong>
+      </p>
+
+      <div class="cta-box">
+        <p class="cta-paragraph">
+          Looking for a growth partner to scale your brand? Let’s work together.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
   /* Strategic highlighting using your brand's gold/beige tone */
   .name-highlight {
     color: #d9c8a3; 
