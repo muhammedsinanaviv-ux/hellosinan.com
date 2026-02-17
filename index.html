@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <title>Muhammed Sinan K | Premium Digital Solutions</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,11 +33,43 @@
             font-family: 'Amaranth', sans-serif;
         }
 
+        /* 3D Canvas Styling */
+        #three-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Fixed Navbar with Blur */
+        .navbar {
+            transition: all 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(217, 200, 163, 0.1);
+            z-index: 1000;
+        }
+
         /* Hero Section */
         .hero-section {
-            padding: 120px 0 80px;
-            background: linear-gradient(to bottom, #000000, #050505);
+            position: relative;
+            padding: 140px 0 100px;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
         }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
         .text-beige { color: var(--soft-beige) !important; }
         .highlight-beige {
             background-color: rgba(245, 245, 220, 0.1);
@@ -62,109 +93,69 @@
             background-color: var(--soft-beige);
             color: #000;
             border-color: var(--soft-beige);
+            transform: translateY(-2px);
         }
 
         /* Services Grid */
-        .services-section { padding: 80px 0; background: var(--card-black); }
+        .services-section { padding: 100px 0; background: var(--card-black); position: relative; z-index: 2; }
         .service-card {
             background: #111;
-            padding: 40px 30px;
+            padding: 40px 25px;
             border-radius: 20px;
             border: 1px solid rgba(217, 200, 163, 0.05);
             height: 100%;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: left;
         }
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
             border-color: var(--primary-beige);
-            box-shadow: 0 10px 30px rgba(217, 200, 163, 0.05);
+            box-shadow: 0 15px 40px rgba(217, 200, 163, 0.08);
+            background: #161616;
         }
-        .service-title { color: var(--primary-beige) !important; margin-bottom: 20px; font-weight: 700; }
-        .service-list { list-style: none; padding: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem; }
-        .service-list li::before { content: "•"; color: var(--primary-beige); margin-right: 10px; font-weight: bold; }
+        .service-title { color: var(--primary-beige) !important; margin-bottom: 20px; font-weight: 700; font-size: 1.5rem; }
+        .service-list { list-style: none; padding: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 25px; }
+        .service-list li { margin-bottom: 8px; display: flex; align-items: flex-start; }
+        .service-list li::before { content: "•"; color: var(--primary-beige); margin-right: 12px; font-weight: bold; }
 
-        /* How I Work */
-        .how-i-work-section { padding: 100px 0; background-color: var(--pure-black); }
-        .step-card {
-            background-color: #0d0d0d;
-            border-radius: 15px;
-            padding: 35px;
-            height: 100%;
-            border-bottom: 4px solid var(--primary-gold); /* From snippet */
-            border-bottom: 4px solid var(--primary-beige);
-            transition: 0.3s;
-        }
-        .step-card:hover { transform: translateY(-5px); }
-        .step-number-title { color: var(--primary-beige) !important; font-weight: 700; margin-bottom: 20px; }
-
-        /* Why Choose Me */
-        .why-choose-me-custom {
-            padding: 100px 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80'); /* Using a fallback laptop image */
-            background-size: cover;
-            background-attachment: fixed;
-            text-align: center;
-        }
-        .why-card-custom {
-            background-color: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 248, 235, 0.2);
-            border-radius: 25px;
-            padding: 50px 40px;
-            max-width: 650px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        .why-list-custom { list-style: none; padding: 0; margin: 0; }
-        .why-list-custom li { color: #fff8eb; font-size: 1.15rem; margin-bottom: 20px; display: flex; align-items: center; }
-        .why-list-custom li::before { content: '✓'; color: var(--accent-yellow); margin-right: 20px; font-weight: 900; font-size: 1.4rem; }
-
-        /* Testimonials */
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .testimonial-card {
-            background: #0a0a0a;
-            padding: 50px 30px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid rgba(245, 245, 220, 0.1);
-            transition: 0.3s;
-        }
-        .testimonial-card:hover { border-color: var(--soft-beige); }
-        .avatar { width: 70px; height: 70px; background-color: var(--primary-beige); border-radius: 50%; margin: 0 auto 20px; }
-        .role { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary-beige); opacity: 0.8; }
-        .quote { color: rgba(255,255,255,0.7); line-height: 1.8; }
+        /* About Section */
+        .about-me-section { padding: 100px 0; background-color: #000; position: relative; z-index: 2; }
+        .name-highlight { color: var(--primary-beige); font-weight: 700; }
 
         /* CTA */
         .cta-section {
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
-            border-top: 5px solid var(--primary-beige);
-            border-bottom: 5px solid var(--primary-beige);
+            border-top: 1px solid rgba(217, 200, 163, 0.2);
+            background: #000;
+            position: relative;
+            z-index: 2;
         }
         .btn-consultation {
             background-color: var(--primary-beige);
             color: #000 !important;
             font-weight: 700;
-            padding: 18px 45px;
-            border-radius: 10px;
+            padding: 20px 50px;
+            border-radius: 12px;
             text-decoration: none;
             display: inline-block;
             transition: 0.3s;
+            font-size: 1.2rem;
         }
-        .btn-consultation:hover { background-color: #fff; transform: translateY(-3px); }
+        .btn-consultation:hover { background-color: #fff; transform: translateY(-5px); }
 
-        /* HubSpot Container Styling */
+        /* HubSpot Wrapper */
         .hs-form-wrapper {
-            background-color: #0d0d0d;
-            border: 1px solid #222;
-            padding: 30px;
-            border-radius: 16px;
+            background-color: rgba(13, 13, 13, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        @media (max-width: 768px) {
-            .display-3 { font-size: 2.5rem; }
-            .about-body-text { text-align: center; }
+        @media (max-width: 991px) {
+            .hero-section { padding-top: 120px; text-align: center; }
         }
     </style>
 </head>
@@ -174,12 +165,12 @@
     <!-- Header / Nav -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">MUHAMMED SINAN K</a>
-            <button class="navbar-toggler btn-outline-beige" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand fw-bold text-beige" href="#">MUHAMMED SINAN K</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                     <li class="nav-item"><a class="nav-link text-white px-3" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link text-white px-3" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link text-white px-3" href="#testimonials">Clients</a></li>
@@ -190,34 +181,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container overflow-hidden">
+    <section class="hero-section" id="hero">
+        <!-- 3D Background Container -->
+        <div id="three-container"></div>
+
+        <div class="container hero-content">
             <div class="row gy-5 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-3 fw-bolder mb-3 text-beige">
+                    <h1 class="display-3 fw-bold mb-3 text-beige">
                         Elevate your Brand With <br>
                         <mark class="highlight-beige">
                             <span class="font-hw display-2 text-beige fw-normal">premium</span>
                         </mark> 
-                        Digital Solution.
+                        Digital Solutions.
                     </h1>
                     <p class="fs-4 mb-5 text-beige opacity-75">
-                        Our methods are straight, comfortable, and established to ensure evolution and acceleration.
+                        Strategic marketing and high-performance design established to accelerate your business growth.
                     </p>
-                    <a href="#cta" class="btn btn-outline-beige rounded-custom fs-5">
-                        Free Consultation
-                    </a>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#cta" class="btn btn-outline-beige fs-5 px-5 py-3">Start a Project</a>
+                    </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
                     <div class="hs-form-wrapper">
-                        <!-- HubSpot Embed -->
-                        <script charset="utf-8" type="text/javascript" src="https://js-na2.hsforms.net/forms/embed/245176803.js" defer></script>
-                        <div class="hs-form-frame" 
-                             data-region="na2" 
-                             data-form-id="afb3c196-306c-4528-ab70-1c77f8b62796" 
-                             data-portal-id="245176803">
+                        <h5 class="text-beige mb-4 text-center">Inquire Now</h5>
+                        <!-- HubSpot Placeholder -->
+                        <div class="text-center p-4 border border-secondary border-dashed rounded text-muted">
+                            HubSpot Form Loader...
                         </div>
-                        <p class="small text-muted text-center mt-3">Secure Lead Generation Form</p>
                     </div>
                 </div>
             </div>
@@ -231,14 +222,11 @@
                 <div class="col-lg-10 text-center">
                     <h2 class="display-4 fw-bold mb-5">About Me</h2>
                     <p class="fs-5 opacity-75 mb-4" style="line-height: 1.8; text-align: justify;">
-                        Hi, I'm <span class="name-highlight">Muhammed Sinan K</span>, a results-driven freelance digital marketer and graphic designer in <span class="name-highlight">Malappuram</span>. I help startups, local businesses, and e-commerce brands grow online through strategic SEO, SEM, and Social Media Marketing. I focus on what matters most—visibility, quality leads, and measurable results. With a data-driven and customized approach, I turn marketing efforts into real business growth.
-                    </p>
-                    <p class="fs-5 opacity-75 mb-5" style="line-height: 1.8; text-align: justify;">
-                        What sets me apart is my practical approach, transparent communication, and continuous optimization to deliver measurable results. From building your online presence to scaling campaigns that convert, I work as a growth partner, not just a marketer.
+                        Hi, I'm <span class="name-highlight">Muhammed Sinan K</span>, a results-driven freelance digital marketer and graphic designer. I help brands grow through strategic SEO, SEM, and creative design. I focus on what matters most—visibility, quality leads, and measurable results.
                     </p>
                     <div class="border-top border-secondary pt-4">
                         <p class="fw-bold fs-4 text-beige">
-                            If you’re looking for a partner to scale your brand online, let’s work together.
+                            Let's scale your brand together.
                         </p>
                     </div>
                 </div>
@@ -249,137 +237,40 @@
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
-            <h2 class="display-4 text-center fw-bold text-beige mb-5">My Services</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
+            <h2 class="display-4 text-center fw-bold text-beige mb-5">Our Expertise</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 col-lg-3">
                     <div class="service-card">
                         <h3 class="service-title">SEO</h3>
                         <ul class="service-list">
-                            <li>Keyword & competitor research</li>
-                            <li>On-page & technical SEO</li>
-                            <li>Content optimization</li>
-                            <li>Local SEO (Calicut/Malappuram)</li>
-                            <li>Performance tracking</li>
+                            <li>Keyword Research</li>
+                            <li>Technical SEO</li>
+                            <li>Local SEO</li>
                         </ul>
-                        <a href="#cta" class="btn btn-outline-beige w-100 mt-3">Book Now</a>
+                        <a href="#cta" class="btn btn-outline-beige w-100">Book Now</a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <h3 class="service-title">SEM</h3>
-                        <ul class="service-list">
-                            <li>Google Ads management</li>
-                            <li>High-intent targeting</li>
-                            <li>Landing page optimization</li>
-                            <li>ROI & Conversion tracking</li>
-                            <li>Budget optimization</li>
-                        </ul>
-                        <a href="#cta" class="btn btn-outline-beige w-100 mt-3">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-md-3">
+                <div class="col-md-4 col-lg-3">
                     <div class="service-card">
                         <h3 class="service-title">SMM</h3>
                         <ul class="service-list">
-                            <li>Social content planning</li>
-                            <li>Profile optimization</li>
-                            <li>Meta (FB/IG) ad campaigns</li>
-                            <li>Audience retargeting</li>
-                            <li>Engagement analytics</li>
+                            <li>Content Planning</li>
+                            <li>Meta Ads</li>
+                            <li>Analytics</li>
                         </ul>
-                        <a href="#cta" class="btn btn-outline-beige w-100 mt-3">Book Now</a>
+                        <a href="#cta" class="btn btn-outline-beige w-100">Book Now</a>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4 col-lg-3">
                     <div class="service-card">
                         <h3 class="service-title">Graphics</h3>
                         <ul class="service-list">
-                            <li>Brand identity design</li>
-                            <li>Social media creatives</li>
-                            <li>Logo & Banner design</li>
-                            <li>Marketing ad assets</li>
-                            <li>Iterative refinements</li>
+                            <li>Brand Identity</li>
+                            <li>Social Media Design</li>
+                            <li>Logo Design</li>
                         </ul>
-                        <a href="#cta" class="btn btn-outline-beige w-100 mt-3">Book Now</a>
+                        <a href="#cta" class="btn btn-outline-beige w-100">Book Now</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How I Work -->
-    <section class="how-i-work-section">
-        <div class="container">
-            <h2 class="display-4 text-center fw-bold mb-5">How I Work</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="step-card">
-                        <h4 class="step-number-title">1. Strategy First</h4>
-                        <p class="opacity-75">I learn about your brand and objectives—whether it's leads, sales, or brand visibility. This ensures every action aligns with your goals.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="step-card">
-                        <h4 class="step-number-title">2. Market Insights</h4>
-                        <p class="opacity-75">I analyze your market, competitors, and customer behavior to identify opportunities that give you a competitive edge.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="step-card">
-                        <h4 class="step-number-title">3. Execution</h4>
-                        <p class="opacity-75">Based on insights, I create tailored digital marketing strategies and set up high-performing campaigns across SEO, SEM, and SMM.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="step-card">
-                        <h4 class="step-number-title">4. Track & Scale</h4>
-                        <p class="opacity-75">I continuously monitor performance, optimize campaigns, and scale what works to deliver consistent growth.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Me -->
-    <section class="why-choose-me-custom">
-        <div class="container">
-            <h2 class="display-4 fw-bold mb-5" style="color: #fff8eb;">Why Choose Me</h2>
-            <div class="why-card-custom">
-                <ul class="why-list-custom">
-                    <li>Results-focused digital marketing strategies</li>
-                    <li>Personal attention & transparent communication</li>
-                    <li>Local market understanding + global approach</li>
-                    <li>Affordable & scalable solutions</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold text-beige">What Our Clients Say</h2>
-                <div style="width: 80px; height: 4px; background-color: var(--primary-beige); margin: 20px auto;"></div>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="avatar"></div>
-                    <h3 class="name font-amaranth h4">Amal Karayi</h3>
-                    <p class="role">Marketing Strategist</p>
-                    <p class="quote">"Partnering with Sinan has been a game-changer. His understanding of digital strategies has increased our brand reach significantly."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="avatar"></div>
-                    <h3 class="name font-amaranth h4">Sejad</h3>
-                    <p class="role">Entrepreneur</p>
-                    <p class="quote">"Working with Sinan transformed our business. His strong SEO knowledge significantly boosted our organic traffic and online visibility."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="avatar"></div>
-                    <h3 class="name font-amaranth h4">Vidya</h3>
-                    <p class="role">Social Media Marketer</p>
-                    <p class="quote">"Collaborating with Mr. Sinan has elevated our presence. We're impressed by his strategic thinking and attention to detail."</p>
                 </div>
             </div>
         </div>
@@ -388,8 +279,8 @@
     <!-- CTA Section -->
     <section id="cta" class="cta-section">
         <div class="container">
-            <h2 class="display-3 fw-bold mb-4 text-beige">Ready to Generate More Leads?</h2>
-            <p class="fs-4 mb-5 opacity-75">Let’s grow your business with data-driven digital marketing strategies that actually convert.</p>
+            <h2 class="display-3 fw-bold mb-4 text-beige">Ready to Scale?</h2>
+            <p class="fs-4 mb-5 opacity-75">Let’s grow your business with data-driven digital strategies.</p>
             <a href="#" class="btn-consultation">Get Free Consultation</a>
         </div>
     </section>
@@ -401,7 +292,91 @@
         </div>
     </footer>
 
-    <!-- Bootstrap Bundle with Popper -->
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // 3D ANIMATION LOGIC
+        let scene, camera, renderer, particles;
+        let mouseX = 0, mouseY = 0;
+
+        function init3D() {
+            const container = document.getElementById('three-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // 1. Scene setup
+            scene = new THREE.Scene();
+
+            // 2. Camera setup
+            camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+            camera.position.z = 5;
+
+            // 3. Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+
+            // 4. Create Particles (The "Digital Web")
+            const particleCount = 1500;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+
+            for (let i = 0; i < particleCount * 3; i++) {
+                positions[i] = (Math.random() - 0.5) * 15; // Spread particles
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+            const material = new THREE.PointsMaterial({
+                color: 0xd9c8a3, // Beige color
+                size: 0.02,
+                transparent: true,
+                opacity: 0.6
+            });
+
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+
+            // 5. Interaction
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX - window.innerWidth / 2) / 100;
+                mouseY = (event.clientY - window.innerHeight / 2) / 100;
+            });
+
+            // 6. Resize listener
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function onWindowResize() {
+            const container = document.getElementById('three-container');
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Gentle rotation
+            particles.rotation.y += 0.001;
+            particles.rotation.x += 0.0005;
+
+            // Parallax movement based on mouse
+            camera.position.x += (mouseX - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            renderer.render(scene, camera);
+        }
+
+        window.onload = function () {
+            init3D();
+            animate();
+        };
+    </script>
 </body>
 </html>
