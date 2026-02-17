@@ -1,1117 +1,427 @@
- <!doctype html>
-<html lang="en">
-
-<head>
-  <!-- Required Meta Tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Document Title, Description, and Author -->
-  <title>Wave - Bootstrap 5 One Page Template</title>
-  <meta name="description" content="Wave is a Bootstrap 5 One Page Template.">
-  <meta name="author" content="BootstrapBrain">
-
-  <!-- Favicon and Touch Icons -->
-  <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon/favicon-512x512.png">
-
-  <!-- Google Fonts Files -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
-
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="./assets/css/wave-bsb.css">
-
-  <!-- BSB Head -->
-</head>
-
-<body data-bs-spy="scroll" data-bs-target="#bsb-tpl-navbar" data-bs-smooth-scroll="true" tabindex="0">
-  <!-- Header -->
-  <header id="header" class="sticky-top bsb-tpl-header-sticky bsb-tpl-header-sticky-animationX">
-
-
-  </header>
-
-  <style>
-  /* Custom Beige Styling */
-  .text-beige { color: #f5f5dc; }
-  .bg-black { background-color: #000000; }
-  .btn-beige { 
-    background-color: #f5f5dc; 
-    color: #000; 
-    border: none; 
-  }
-  .btn-beige:hover { 
-    background-color: #e1e1bc; 
-    color: #000; 
-  }
-  /* Optional: Making the mark tag blend with the theme */
-  .bsb-tpl-highlight-beige {
-    background-color: rgba(245, 245, 220, 0.2);
-    padding: 0 5px;
-  }
-</style>
-
-<style>
-  /* 1. Theme Colors */
-  .bg-black { background-color: #000000 !important; }
-  .text-beige { color: #f5f5dc !important; }
-
-  /* 2. Custom Button Style (Beige border, transparent inside) */
-  .btn-outline-beige {
-    background-color: transparent;
-    color: #f5f5dc;
-    border: 1px solid #f5f5dc; /* This creates the border you see in your image */
-    padding: 12px 30px;
-    transition: all 0.3s ease;
-    text-transform: none;
-    font-weight: 500;
-  }
-
-  /* Hover effect: button fills with beige */
-  .btn-outline-beige:hover {
-    background-color: #f5f5dc;
-    color: #000000;
-    border-color: #f5f5dc;
-  }
-
-  /* 3. Custom Rounding */
-  .rounded-custom {
-    border-radius: 8px; /* Subtle rounding to match your screenshot */
-  }
-
-  /* 4. Highlight Styling */
-  .bsb-tpl-highlight-beige {
-    background-color: rgba(245, 245, 220, 0.1);
-    padding: 0 5px;
-  }
-</style>
-
-<section id="scrollspyHero" class="bsb-hero-2 bg-black py-5 py-xl-8 py-xxl-10">
-  <div class="container overflow-hidden">
-    <div class="row gy-3 gy-lg-0 align-items-lg-center justify-content-lg-between">
-      
-      <div class="col-12 col-lg-6 order-1 order-lg-0">
-        <h1 class="display-3 fw-bolder mb-3 text-beige">
-          Elevate your Brand With <br>
-          <mark class="bsb-tpl-highlight-beige">
-            <span class="bsb-tpl-font-hw display-2 text-beige fw-normal">premium</span>
-          </mark> 
-          Digital Solution.
-        </h1>
-        <p class="fs-4 mb-5 text-beige opacity-75">
-          Our methods are straight, comfortable, and established to ensure evolution and acceleration.
-        </p>
-        
-        <div class="d-grid gap-2 d-sm-flex">
-          <button type="button" class="btn btn-outline-beige rounded-custom fs-5">
-            Free Consultation
-          </button>
-        </div>
-      </div>
-
-      <div class="col-12 col-lg-5 text-center">
-        <div class="p-4 rounded-4" style="background-color: #111111; border: 1px solid #222;">
-          <script src="https://js-na2.hsforms.net/forms/embed/245176803.js" defer></script>
-          <div class="hs-form-frame" 
-               data-region="na2" 
-               data-form-id="afb3c196-306c-4528-ab70-1c77f8b62796" 
-               data-portal-id="245176803">
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-</section>
-  </section>
-
-  <!-- Main -->
-  <main id="main">
-
-    
-<style>
-  /* Custom Section Styling */
-  .about-me-section {
-    background-color: #000000; /* Pure Black Background */
-    font-family: 'Amaranth', sans-serif;
-    color: #ffffff; /* White Font Color */
-    padding: 100px 20px;
-  }
-
-  .about-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap; /* Ensures responsiveness on mobile */
-  }
-
-  .about-image-container {
-    flex: 1;
-    min-width: 300px;
-  }
-
-  .about-image-container img {
-    width: 100%;
-    border-radius: 15px; /* Subtle rounding for a modern look */
-    border: 1px solid #333333;
-    box-shadow: 0 10px 30px rgba(217, 200, 163, 0.1); /* Soft gold glow */
-  }
-
-  .about-content {
-    flex: 1.5;
-    min-width: 300px;
-  }
-
-  .about-header {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-    color: #ffffff;
-  }
-
-  .about-body-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 25px;
-    opacity: 0.95;
-    text-align: left;
-  }
-
-  .name-highlight {
-    color: #d9c8a3; 
-    font-weight: 700;
-  }
-
-  .cta-paragraph {
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-top: 30px;
-    border-top: 1px solid #333333;
-    padding-top: 20px;
-  }
-
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .about-container {
-      flex-direction: column;
-      text-align: center;
-    }
-    .about-body-text {
-      text-align: center;
-    }
-  }
-</style>
-
-<section class="about-me-section">
-  <div class="about-container">
-    
-    <div class="about-image-container">
-      <img src="IMG_1237.PNG" alt="Muhammed Sinan K - Digital Marketer in Malappuram">
-    </div>
-
-    <div class="about-content">
-      <h2 class="about-header">About Me</h2>
-      
-      <p class="about-body-text">
-        I’m <span class="name-highlight">Muhammed Sinan K</span>, a results-driven freelance digital marketer and graphic designer based in <span class="name-highlight">Malappuram</span>. I specialize in helping startups and e-commerce brands scale through strategic SEO, SEM, and high-impact Social Media Marketing.
-      </p>
-
-      <p class="about-body-text">
-        My approach blends creative graphic design with analytical marketing strategies. Whether I'm redesigning a corporate website or optimizing a lead-gen campaign, my focus remains on one thing: <strong>measurable growth.</strong>
-      </p>
-
-      <div class="cta-box">
-        <p class="cta-paragraph">
-          Looking for a growth partner to scale your brand? Let’s work together.
-        </p>
-      </div>
-    </div>
-
-  
-
-  .cta-paragraph {
-    font-weight: 700;
-    font-size: 1.3rem;
-    margin-top: 45px;
-    border-top: 1px solid #333333;
-    padding-top: 30px;
-  }
-</style>
-
-<section class="about-me-section">
-  <div class="about-container">
-    <h2 class="about-header">About Me</h2>
-    
-    <div class="about-content">
-      <p class="about-body-text">
-        I’m <span class="name-highlight">Muhammed Sinan K</span>, a results-driven freelance digital marketer and graphic designer based in <span class="name-highlight">Malappuram</span>. I specialize in helping startups and e-commerce brands scale through strategic SEO, SEM, and high-impact Social Media Marketing.
-      </p>
-
-      <p class="about-body-text">
-        My approach blends creative graphic design with analytical marketing strategies. Whether I'm redesigning a corporate website or optimizing a lead-gen campaign, my focus remains on one thing: <strong>measurable growth.</strong>
-      </p>
-
-      <div class="cta-
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-  /* Applied Amaranth font globally to this section */
-  .services-section {
-    font-family: 'Amaranth', sans-serif;
-    background-color: #1a1a1a; /* Dark background to make white text pop */
-    padding: 60px 0;
-  }
-
-  .service-card {
-    background-color: #ffffff; /* Keeping cards white for high contrast like your screenshot */
-    border-radius: 15px;
-    padding: 30px;
-    height: 100%;
-    transition: transform 0.3s ease;
-    border: none;
-    text-align: center;
-  }
-
-  .service-card:hover {
-    transform: translateY(-10px);
-  }
-
-  .service-title {
-    font-weight: 700;
-    color: #4a3728; /* Dark brown from your screenshot */
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .service-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-    color: #6c757d;
-    font-size: 0.95rem;
-  }
-
-  .service-list li {
-    margin-bottom: 10px;
-    position: relative;
-  }
-
-  /* Custom "Book Now" Button Style */
-  .btn-book {
-    background-color: #4a3728;
-    color: white;
-    font-weight: 700;
-    padding: 10px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s;
-  }
-
-  .btn-book:hover {
-    background-color: #5d4037;
-    color: #ffffff;
-  }
-</style>
-
-    </div>
-  </div>
-</section>
-<link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-  .how-i-work-section {
-    background-color: #fdf5e6; /* Light cream background from screenshot */
-    font-family: 'Amaranth', sans-serif;
-    padding: 80px 0;
-  }
-
-  .section-title {
-    color: #4a3728; /* Dark brown heading */
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    text-align: center;
-  }
-
-  /* Specific beige/gold color for the cards */
-  .step-card {
-    background-color: #d9c8a3; 
-    border-radius: 12px;
-    padding: 35px 25px;
-    height: 100%;
-    border: none;
-    transition: transform 0.3s ease;
-  }
-
-  .step-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .step-number-title {
-    color: #0000;
-    font-weight: 700;
-    font-size: 1.15rem;
-    margin-bottom: 25px;
-    line-height: 1.3;
-  }
-
-  .step-description {
-    color: #4a3728;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 0;
-  }
-</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammed Sinan K | Digital Marketing Strategist</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muhammed Sinan K | Premium Digital Solutions</title>
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@300;400;700&family=Satisfy&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
-            --primary-gold: #d9c8a3;
+            --primary-beige: #d9c8a3;
+            --soft-beige: #f5f5dc;
             --pure-black: #000000;
-            --soft-black: #0a0a0a;
+            --card-black: #0a0a0a;
             --accent-yellow: #e2f57a;
         }
 
         body {
-            font-family: 'Amaranth', sans-serif;
+            font-family: 'Outfit', sans-serif;
             background-color: var(--pure-black);
-            color: #ffffff; /* Global Font Color: White */
+            color: #ffffff;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4, h5, p, span, li {
-            color: #ffffff !important;
+        h1, h2, h3, .font-amaranth {
+            font-family: 'Amaranth', sans-serif;
         }
 
-        /* 1. Section Header Styling */
-        .section-title {
-            font-size: 2.8rem;
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.95);
+            border-bottom: 1px solid rgba(217, 200, 163, 0.1);
+            padding: 20px 0;
+        }
+        .navbar-brand {
+            color: var(--primary-beige) !important;
+            font-family: 'Amaranth', sans-serif;
             font-weight: 700;
-            margin-bottom: 50px;
-            text-align: center;
             letter-spacing: 1px;
         }
 
-        /* 2. Services Cards (Dark Version) */
-        .service-card {
-            background-color: var(--soft-black);
-            border: 1px solid #333;
-            border-radius: 20px;
-            padding: 40px 25px;
-            height: 100%;
-            transition: all 0.3s ease;
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 0 80px;
+            background: linear-gradient(to bottom, #000000, #050505);
         }
-        .service-card:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-10px);
+        .text-beige { color: var(--soft-beige) !important; }
+        .highlight-beige {
+            background-color: rgba(245, 245, 220, 0.1);
+            padding: 0 10px;
+            border-radius: 4px;
         }
-        .service-title {
-            color: var(--primary-gold) !important;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        .btn-book {
-            background-color: var(--primary-gold);
-            color: #000000 !important; /* Black text on gold button for readability */
-            font-weight: 700;
-            padding: 10px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 15px;
-        }
+        .font-hw { font-family: 'Satisfy', cursive; }
 
-        
-        
-      
-
-        /* 4. How I Work Cards */
-        .step-card {
-            background-color: #151515;
-            border-radius: 15px;
-            padding: 30px;
-            height: 100%;
-            border-bottom: 4px solid var(--primary-gold);
-        }
-
-        /* 5. CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            border-top: 1px solid #333;
-            background: linear-gradient(to bottom, #000000, #0a0a0a);
-        }
-        .btn-consult {
+        /* Buttons */
+        .btn-outline-beige {
             background-color: transparent;
-            color: #ffffff !important;
-            border: 2px solid var(--primary-gold);
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .btn-consult:hover {
-            background-color: var(--primary-gold);
-            color: #000000 !important;
-        }
-    </style>
-</head>
-<body>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Services - Black & Beige</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #000000;
-            --beige-accent: #f5f5dc; /* Classic Beige */
-            --card-bg: #1a1a1a;    /* Dark grey to keep cards visible */
-            --text-main: #f5f5dc;
-            --btn-bg: #f5f5dc;
-            --btn-text: #000000;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 50px 20px;
-            color: var(--text-main);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            font-weight: 700;
-            color: var(--beige-accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(245, 245, 220, 0.1); /* Subtle beige border */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            color: var(--soft-beige);
+            border: 1px solid var(--soft-beige);
+            padding: 12px 35px;
             transition: all 0.3s ease;
+            text-transform: none;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+        .btn-outline-beige:hover {
+            background-color: var(--soft-beige);
+            color: #000;
+            border-color: var(--soft-beige);
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--beige-accent);
-            box-shadow: 0 10px 30px rgba(245, 245, 220, 0.05);
+        /* About Section */
+        .about-me-section {
+            padding: 100px 0;
+            border-top: 1px solid #111;
         }
+        .name-highlight { color: var(--primary-beige); font-weight: 700; }
 
-        .service-card h2 {
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-            color: var(--beige-accent);
-        }
-
-        .service-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 30px 0;
-            flex-grow: 1;
+        /* Services Grid */
+        .services-section { padding: 80px 0; background: var(--card-black); }
+        .service-card {
+            background: #111;
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(217, 200, 163, 0.05);
+            height: 100%;
+            transition: all 0.3s ease;
             text-align: left;
         }
-
-        .service-card li {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 12px;
-            opacity: 0.9;
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-beige);
+            box-shadow: 0 10px 30px rgba(217, 200, 163, 0.05);
         }
+        .service-title { color: var(--primary-beige) !important; margin-bottom: 20px; font-weight: 700; }
+        .service-list { list-style: none; padding: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+        .service-list li::before { content: "•"; color: var(--primary-beige); margin-right: 10px; font-weight: bold; }
 
-        .service-card li::before {
-            content: "•";
-            color: var(--beige-accent);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        .book-btn {
-            background-color: var(--btn-bg);
-            color: var(--btn-text);
-            border: none;
-            padding: 14px 0;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-
-        .book-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>My Services</h1>
-    
-    <div class="services-grid">
-        <div class="service-card">
-            <h2>SEO</h2>
-            <ul>
-                <li>Keyword & competitor research</li>
-                <li>On-page & technical SEO optimization</li>
-                <li>Content optimization for rankings</li>
-                <li>Local SEO for Calicut-based businesses</li>
-                <li>Traffic growth & performance tracking</li>
-            </ul>
-            <a href="#" class="book-btn">BOOK NOW</a>
-        </div>
-
-        <div class="service-card">
-            <h2>SEM</h2>
-            <ul>
-                <li>Google Ads setup & management</li>
-                <li>High-intent keyword targeting</li>
-                <li>Ad copy & landing page optimization</li>
-                <li>Conversion & ROI tracking</li>
-                <li>Budget optimization for better results</li>
-            </ul>
-            <a href="#" class="book-btn">BOOK NOW</a>
-        </div>
-
-        <div class="service-card">
-            <h2>SMM</h2>
-            <ul>
-                <li>Social media strategy & content planning</li>
-                <li>Profile optimization</li>
-                <li>Facebook & Instagram ad campaigns</li>
-                <li>Audience targeting & retargeting</li>
-                <li>Engagement & performance analytics</li>
-            </ul>
-            <a href="#" class="book-btn">BOOK NOW</a>
-        </div>
-
-        <div class="service-card">
-            <h2>Graphic Designing</h2>
-            <ul>
-                <li>Brand identity & visual consistency</li>
-                <li>Social media creatives & ad designs</li>
-                <li>Logo, banner & poster design</li>
-                <li>Marketing creatives for digital campaigns</li>
-                <li>Iterative design refinements</li>
-            </ul>
-            <a href="#" class="book-btn">BOOK NOW</a>
-        </div>
-    </div>
-</div>
-
-</body>
-</html  
-
-  <div class="container">
-    <h2 class="section-title">How I Work</h2>
-    
-    <div class="row g-4">
-      <div class="col-md-3">
-        <div class="step-card shadow-sm text-center">
-          <h4 class="step-number-title">1. Understand your business & goals</h4>
-          <p class="step-description">
-            I start by learning about your brand, audience, and objectives—whether it's leads, sales, or brand visibility. This ensures every action aligns with your business goals.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="step-card shadow-sm text-center">
-          <h4 class="step-number-title">2. Market & competitor research</h4>
-          <p class="step-description">
-            I analyze your market, competitors, and customer behavior to identify opportunities and gaps that can give your business a competitive edge.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="step-card shadow-sm text-center">
-          <h4 class="step-number-title">3. Strategy & campaign setup</h4>
-          <p class="step-description">
-            Based on insights, I create a tailored digital marketing strategy and set up high-performing campaigns across SEO, SEM, and SMM channels.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="step-card shadow-sm text-center">
-          <h4 class="step-number-title">4. Optimize, track & scale results</h4>
-          <p class="step-description">
-            I continuously monitor performance, optimize campaigns, and scale what works to deliver consistent and measurable growth.
-          </p>
-        </div>
-      </div>
-      <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-  .why-choose-me-yellow {
-    font-family: 'Amaranth', sans-serif;
-    /* Black background with the laptop image overlay */
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
-                url('your-laptop-image.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-  }
-
-  .why-title-yellow {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-    /* Updated title to Yellow */
-    color: #e2f57a !important; 
-  }
-
-  .why-card-glass {
-    background-color: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(226, 245, 122, 0.2); /* Subtle yellow border */
-    border-radius: 25px;
-    padding: 50px 40px;
-    max-width: 650px;
-    width: 100%;
-    text-align: left;
-  }
-
-  .why-list-yellow {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .why-list-yellow li {
-    color: #ffffff;
-    font-size: 1.25rem;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-  }
-
-  /* Yellow Checkmark styling */
-  .why-list-yellow li::before {
-    content: '✓';
-    font-weight: 900;
-    margin-right: 20px;
-    color: #e2f57a; /* Updated checkmark to Yellow */
-    font-size: 1.5rem;
-  }
-</style>
-
-<link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-  .why-choose-me-custom {
-    font-family: 'Amaranth', sans-serif;
-    /* Black background with the laptop image overlay */
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
-                url('your-laptop-image.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .why-title-custom {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-    /* Title in your requested #fff8eb color */
-    color: #fff8eb !important; 
-  }
-
-  .why-card-custom {
-    background-color: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 248, 235, 0.2); /* Subtle border in #fff8eb */
-    border-radius: 25px;
-    padding: 50px 40px;
-    max-width: 650px;
-    width: 100%;
-    text-align: left;
-  }
-
-  .why-list-custom {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .why-list-custom li {
-    /* Main text in your requested #fff8eb color */
-    color: #fff8eb;
-    font-size: 1.25rem;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    opacity: 0.95;
-  }
-
-  /* Yellow Checkmark remains for branding contrast */
-  .why-list-custom li::before {
-    content: '✓';
-    font-weight: 900;
-    margin-right: 20px;
-    color: #e2f57a; /* Keeping the yellow accent for the checkmarks */
-    font-size: 1.5rem;
-  }
-</style>
-
-<section class="why-choose-me-custom">
-  <h2 class="why-title-custom">Why Choose Me</h2>
-  
-  <div class="why-card-custom">
-    <ul class="why-list-custom">
-      <li>Results-focused digital marketing strategies</li>
-      <li>Personal attention & transparent communication</li>
-      <li>Local market understanding + global approach</li>
-      <li>Affordable & scalable solutions</li>
-    </ul>
-  </div>
-</section>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <style>
-        body {
-            background-color: #000000 !important; /* Forces background black */
-            padding: 100px 20px;
-            font-family: sans-serif;
-        }
-
-        /* Testimonial Title Styling */
-        .testimonial-header h2 {
-            color: #F5F5DC; /* Beige */
-            font-weight: 800;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .underline {
-            width: 80px;
-            height: 4px;
-            background-color: #F5F5DC;
-            margin: 0 auto 40px auto;
-        }
-
-        /* 2. Custom Beige Button Fix */
-        .btn-outline-beige {
-            color: #F5F5DC !important; /* Forces font beige */
-            border: 2px solid #F5F5DC !important; /* Forces border beige */
-            background-color: transparent !important;
+        /* How I Work */
+        .how-i-work-section { padding: 100px 0; background-color: var(--pure-black); }
+        .step-card {
+            background-color: #0d0d0d;
+            border-radius: 15px;
+            padding: 35px;
+            height: 100%;
+            border-bottom: 4px solid var(--primary-gold); /* From snippet */
+            border-bottom: 4px solid var(--primary-beige);
             transition: 0.3s;
         }
+        .step-card:hover { transform: translateY(-5px); }
+        .step-number-title { color: var(--primary-beige) !important; font-weight: 700; margin-bottom: 20px; }
 
-        .btn-outline-beige:hover {
-            background-color: #F5F5DC !important;
-            color: #000000 !important; /* Text turns black on hover */
+        /* Why Choose Me */
+        .why-choose-me-custom {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80'); /* Using a fallback laptop image */
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
         }
-
-        .rounded-custom {
-            border-radius: 50px !important;
-            padding: 12px 40px !important;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="testimonial-header">
-        <h2>What Our Clients Say</h2>
-        <div class="underline"></div>
-    </div>
-
-</body>
-</html>
-</div>
-    <title>Testimonials - Black & Beige Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #000000;
-            --beige-text: #f5f5dc; 
-            --card-bg: #111111; /* Slightly lighter than pure black for definition */
-            --muted-beige: rgba(245, 245, 220, 0.7);
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 80px 20px;
-            color: var(--beige-text);
-        }
-
-        .container {
-            max-width: 1200px;
+        .why-card-custom {
+            background-color: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 248, 235, 0.2);
+            border-radius: 25px;
+            padding: 50px 40px;
+            max-width: 650px;
             margin: 0 auto;
+            text-align: left;
         }
+        .why-list-custom { list-style: none; padding: 0; margin: 0; }
+        .why-list-custom li { color: #fff8eb; font-size: 1.15rem; margin-bottom: 20px; display: flex; align-items: center; }
+        .why-list-custom li::before { content: '✓'; color: var(--accent-yellow); margin-right: 20px; font-weight: 900; font-size: 1.4rem; }
 
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
+        /* Testimonials */
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .testimonial-card {
-            background: var(--card-bg);
+            background: #0a0a0a;
             padding: 50px 30px;
             border-radius: 20px;
             text-align: center;
             border: 1px solid rgba(245, 245, 220, 0.1);
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
+        .testimonial-card:hover { border-color: var(--soft-beige); }
+        .avatar { width: 70px; height: 70px; background-color: var(--primary-beige); border-radius: 50%; margin: 0 auto 20px; }
+        .role { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary-beige); opacity: 0.8; }
+        .quote { color: rgba(255,255,255,0.7); line-height: 1.8; }
 
-        .testimonial-card:hover {
-            border-color: var(--beige-text);
-            transform: translateY(-10px);
+        /* CTA */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            border-top: 5px solid var(--primary-beige);
+            border-bottom: 5px solid var(--primary-beige);
         }
-
-        /* Avatar styling */
-        .avatar {
-            width: 100px;
-            height: 100px;
-            background-color: var(--beige-text); /* Placeholder color */
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 2px solid var(--beige-text);
+        .btn-consultation {
+            background-color: var(--primary-beige);
+            color: #000 !important;
+            font-weight: 700;
+            padding: 18px 45px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
         }
+        .btn-consultation:hover { background-color: #fff; transform: translateY(-3px); }
 
-        /* Name and Role */
-        .name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin: 10px 0 5px;
-            color: var(--beige-text);
-        }
-
-        .role {
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            color: var(--muted-beige);
-        }
-
-        /* Testimonial body */
-        .quote {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--muted-beige);
-            margin: 0;
+        /* HubSpot Container Styling */
+        .hs-form-wrapper {
+            background-color: #0d0d0d;
+            border: 1px solid #222;
+            padding: 30px;
+            border-radius: 16px;
         }
 
         @media (max-width: 768px) {
-            .testimonial-card {
-                padding: 40px 20px;
-            }
+            .display-3 { font-size: 2.5rem; }
+            .about-body-text { text-align: center; }
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="testimonial-grid">
-        
-        <div class="testimonial-card">
-            <div class="avatar">
+    <!-- Header / Nav -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MUHAMMED SINAN K</a>
+            <button class="navbar-toggler btn-outline-beige" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-white px-3" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white px-3" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white px-3" href="#testimonials">Clients</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-beige ms-lg-3 mt-2 mt-lg-0" href="#cta">Consultation</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container overflow-hidden">
+            <div class="row gy-5 align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bolder mb-3 text-beige">
+                        Elevate your Brand With <br>
+                        <mark class="highlight-beige">
+                            <span class="font-hw display-2 text-beige fw-normal">premium</span>
+                        </mark> 
+                        Digital Solution.
+                    </h1>
+                    <p class="fs-4 mb-5 text-beige opacity-75">
+                        Our methods are straight, comfortable, and established to ensure evolution and acceleration.
+                    </p>
+                    <a href="#cta" class="btn btn-outline-beige rounded-custom fs-5">
+                        Free Consultation
+                    </a>
                 </div>
-            <h3 class="name">Amal karayi</h3>
-            <p class="role">Digital Marketing Strategist</p>
-            <p class="quote">
-                Partnering with Sinan has been a game-changer for our company. His deep understanding of digital strategies has increased our brand reach and customer engagement. We value his innovative tactics and commitment to results. Sinan professionalism makes him the best.
-            </p>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="hs-form-wrapper">
+                        <!-- HubSpot Embed -->
+                        <script charset="utf-8" type="text/javascript" src="https://js-na2.hsforms.net/forms/embed/245176803.js" defer></script>
+                        <div class="hs-form-frame" 
+                             data-region="na2" 
+                             data-form-id="afb3c196-306c-4528-ab70-1c77f8b62796" 
+                             data-portal-id="245176803">
+                        </div>
+                        <p class="small text-muted text-center mt-3">Secure Lead Generation Form</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="testimonial-card">
-            <div class="avatar"></div>
-            <h3 class="name">Sejad</h3>
-            <p class="role">Entrepreneur</p>
-            <p class="quote">
-                Working with Mr. Sinan has transformed our business. His strong SEO knowledge significantly boosted our organic traffic and online visibility. We truly value his data-driven approach and focus on results. Sinan's dedication and expertise make him the top digital marketing consultant in Malappuram.
-            </p>
+    <!-- About Me Section -->
+    <section id="about" class="about-me-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h2 class="display-4 fw-bold mb-5">About Me</h2>
+                    <p class="fs-5 opacity-75 mb-4" style="line-height: 1.8; text-align: justify;">
+                        Hi, I'm <span class="name-highlight">Muhammed Sinan K</span>, a results-driven freelance digital marketer and graphic designer in <span class="name-highlight">Malappuram</span>. I help startups, local businesses, and e-commerce brands grow online through strategic SEO, SEM, and Social Media Marketing. I focus on what matters most—visibility, quality leads, and measurable results. With a data-driven and customized approach, I turn marketing efforts into real business growth.
+                    </p>
+                    <p class="fs-5 opacity-75 mb-5" style="line-height: 1.8; text-align: justify;">
+                        What sets me apart is my practical approach, transparent communication, and continuous optimization to deliver measurable results. From building your online presence to scaling campaigns that convert, I work as a growth partner, not just a marketer.
+                    </p>
+                    <div class="border-top border-secondary pt-4">
+                        <p class="fw-bold fs-4 text-beige">
+                            If you’re looking for a partner to scale your brand online, let’s work together.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="testimonial-card">
-            <div class="avatar"></div>
-            <h3 class="name">Vidya</h3>
-            <p class="role">Social Media Marketer</p>
-            <p class="quote">
-                Collaborating with Mr. Sinan has elevated our online presence remarkably. His expertise in content marketing and social media has driven exceptional growth for our business. We're impressed by his strategic thinking and attention to detail. Sinan's passion makes him a leading digital marketing specialist in Malappuram.
-            </p>
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="display-4 text-center fw-bold text-beige mb-5">My Services</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h3 class="service-title">SEO</h3>
+                        <ul class="service-list">
+                            <li>Keyword & competitor research</li>
+                            <li>On-page & technical SEO</li>
+                            <li>Content optimization</li>
+                            <li>Local SEO (Calicut/Malappuram)</li>
+                            <li>Performance tracking</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-outline-beige w-100 mt-3">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h3 class="service-title">SEM</h3>
+                        <ul class="service-list">
+                            <li>Google Ads management</li>
+                            <li>High-intent targeting</li>
+                            <li>Landing page optimization</li>
+                            <li>ROI & Conversion tracking</li>
+                            <li>Budget optimization</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-outline-beige w-100 mt-3">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h3 class="service-title">SMM</h3>
+                        <ul class="service-list">
+                            <li>Social content planning</li>
+                            <li>Profile optimization</li>
+                            <li>Meta (FB/IG) ad campaigns</li>
+                            <li>Audience retargeting</li>
+                            <li>Engagement analytics</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-outline-beige w-100 mt-3">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h3 class="service-title">Graphics</h3>
+                        <ul class="service-list">
+                            <li>Brand identity design</li>
+                            <li>Social media creatives</li>
+                            <li>Logo & Banner design</li>
+                            <li>Marketing ad assets</li>
+                            <li>Iterative refinements</li>
+                        </ul>
+                        <a href="#cta" class="btn btn-outline-beige w-100 mt-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-</div>
+    <!-- How I Work -->
+    <section class="how-i-work-section">
+        <div class="container">
+            <h2 class="display-4 text-center fw-bold mb-5">How I Work</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <h4 class="step-number-title">1. Strategy First</h4>
+                        <p class="opacity-75">I learn about your brand and objectives—whether it's leads, sales, or brand visibility. This ensures every action aligns with your goals.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <h4 class="step-number-title">2. Market Insights</h4>
+                        <p class="opacity-75">I analyze your market, competitors, and customer behavior to identify opportunities that give you a competitive edge.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <h4 class="step-number-title">3. Execution</h4>
+                        <p class="opacity-75">Based on insights, I create tailored digital marketing strategies and set up high-performing campaigns across SEO, SEM, and SMM.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-card">
+                        <h4 class="step-number-title">4. Track & Scale</h4>
+                        <p class="opacity-75">I continuously monitor performance, optimize campaigns, and scale what works to deliver consistent growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</body>
-</html>
+    <!-- Why Choose Me -->
+    <section class="why-choose-me-custom">
+        <div class="container">
+            <h2 class="display-4 fw-bold mb-5" style="color: #fff8eb;">Why Choose Me</h2>
+            <div class="why-card-custom">
+                <ul class="why-list-custom">
+                    <li>Results-focused digital marketing strategies</li>
+                    <li>Personal attention & transparent communication</li>
+                    <li>Local market understanding + global approach</li>
+                    <li>Affordable & scalable solutions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-beige">What Our Clients Say</h2>
+                <div style="width: 80px; height: 4px; background-color: var(--primary-beige); margin: 20px auto;"></div>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="avatar"></div>
+                    <h3 class="name font-amaranth h4">Amal Karayi</h3>
+                    <p class="role">Marketing Strategist</p>
+                    <p class="quote">"Partnering with Sinan has been a game-changer. His understanding of digital strategies has increased our brand reach significantly."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="avatar"></div>
+                    <h3 class="name font-amaranth h4">Sejad</h3>
+                    <p class="role">Entrepreneur</p>
+                    <p class="quote">"Working with Sinan transformed our business. His strong SEO knowledge significantly boosted our organic traffic and online visibility."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="avatar"></div>
+                    <h3 class="name font-amaranth h4">Vidya</h3>
+                    <p class="role">Social Media Marketer</p>
+                    <p class="quote">"Collaborating with Mr. Sinan has elevated our presence. We're impressed by his strategic thinking and attention to detail."</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <h2 class="display-3 fw-bold mb-4 text-beige">Ready to Generate More Leads?</h2>
+            <p class="fs-4 mb-5 opacity-75">Let’s grow your business with data-driven digital marketing strategies that actually convert.</p>
+            <a href="#" class="btn-consultation">Get Free Consultation</a>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="py-5 text-center border-top border-secondary">
+        <div class="container">
+            <p class="text-beige opacity-50">&copy; 2025 Muhammed Sinan K. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    
-
-    
-
+    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-<
-
-    </div>
-  </div>
-</section>
-<link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-  .cta-section {
-    font-family: 'Amaranth', sans-serif;
-    background-color: #000000; /* Pure Black Background */
-    padding: 100px 20px;
-    text-align: center;
-    /* Changed border to the beige/gold color for a high-end look */
-    border-top: 5px solid #d9c8a3; 
-    border-bottom: 5px solid #d9c8a3;
-  }
-
-  .cta-title {
-    color: #ffffff !important;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-  }
-
-  .cta-subtitle {
-    color: #ffffff !important;
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.8; /* Makes the subtitle slightly softer than the title */
-  }
-
-  .btn-consultation {
-    background-color: #d9c8a3; /* Beige/Gold button for contrast against black */
-    color: #4a3728 !important; /*  light button */
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 18px 45px;
-    border-radius: 10px;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-  }
-
-  .btn-consultation:hover {
-    background-color: transparent;
-    color: #ffffff !important;
-    border: 2px solid #d9c8a3;
-    transform: translateY(-3px);
-  }
-</style>
-
-<section class="cta-section">
-  <div class="container">
-    <h2 class="cta-title">Ready to Generate More Leads?</h2>
-    <p class="cta-subtitle">
-      Let’s grow your business with data-driven digital marketing strategies that actually convert.
-    </p>
-    <a href="#" class="btn-consultation">Get  Consultation</a>
-  </div>
-</section>
-
-    
-          
-
-   
-                     
-
-      
-                
-                
-
-   
-                          
-    
-
-      
-
-    
-                      
