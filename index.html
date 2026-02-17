@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -33,21 +34,21 @@
             font-family: 'Amaranth', sans-serif;
         }
 
-        /* 3D Canvas Styling */
-        #three-container {
+        /* 3D Canvas Background */
+        #canvas-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
+            z-index: 1;
             pointer-events: none;
         }
 
         /* Fixed Navbar with Blur */
         .navbar {
             transition: all 0.3s ease;
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(217, 200, 163, 0.1);
@@ -57,7 +58,7 @@
         /* Hero Section */
         .hero-section {
             position: relative;
-            padding: 140px 0 100px;
+            padding: 160px 0 100px;
             background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
             min-height: 90vh;
             display: flex;
@@ -78,6 +79,17 @@
         }
         .font-hw { font-family: 'Satisfy', cursive; }
 
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--primary-beige);
+            padding: 60px 0;
+            color: #000;
+            position: relative;
+            z-index: 5;
+        }
+        .stat-item h2 { font-size: 3rem; font-weight: 800; margin-bottom: 0; }
+        .stat-item p { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0; opacity: 0.8; }
+
         /* Buttons */
         .btn-outline-beige {
             background-color: transparent;
@@ -85,15 +97,14 @@
             border: 1px solid var(--soft-beige);
             padding: 12px 35px;
             transition: all 0.3s ease;
-            text-transform: none;
             font-weight: 600;
             border-radius: 8px;
         }
         .btn-outline-beige:hover {
             background-color: var(--soft-beige);
             color: #000;
-            border-color: var(--soft-beige);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(217, 200, 163, 0.2);
         }
 
         /* Services Grid */
@@ -105,50 +116,37 @@
             border: 1px solid rgba(217, 200, 163, 0.05);
             height: 100%;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: left;
         }
         .service-card:hover {
             transform: translateY(-12px);
             border-color: var(--primary-beige);
-            box-shadow: 0 15px 40px rgba(217, 200, 163, 0.08);
             background: #161616;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
-        .service-title { color: var(--primary-beige) !important; margin-bottom: 20px; font-weight: 700; font-size: 1.5rem; }
-        .service-list { list-style: none; padding: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 25px; }
-        .service-list li { margin-bottom: 8px; display: flex; align-items: flex-start; }
+        .service-title { color: var(--primary-beige) !important; margin-bottom: 20px; font-weight: 700; }
+        .service-list { list-style: none; padding: 0; color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+        .service-list li { margin-bottom: 8px; }
         .service-list li::before { content: "•"; color: var(--primary-beige); margin-right: 12px; font-weight: bold; }
 
-        /* About Section */
-        .about-me-section { padding: 100px 0; background-color: #000; position: relative; z-index: 2; }
-        .name-highlight { color: var(--primary-beige); font-weight: 700; }
-
-        /* CTA */
-        .cta-section {
-            padding: 120px 0;
+        /* Testimonials */
+        .testimonial-card {
+            background: #0d0d0d;
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
-            border-top: 1px solid rgba(217, 200, 163, 0.2);
-            background: #000;
-            position: relative;
-            z-index: 2;
-        }
-        .btn-consultation {
-            background-color: var(--primary-beige);
-            color: #000 !important;
-            font-weight: 700;
-            padding: 20px 50px;
-            border-radius: 12px;
-            text-decoration: none;
-            display: inline-block;
+            border: 1px solid rgba(245, 245, 220, 0.05);
+            height: 100%;
             transition: 0.3s;
-            font-size: 1.2rem;
         }
-        .btn-consultation:hover { background-color: #fff; transform: translateY(-5px); }
+        .testimonial-card:hover { border-color: var(--primary-beige); transform: scale(1.02); }
+        .avatar { width: 60px; height: 60px; background-color: var(--primary-beige); border-radius: 50%; margin: 0 auto 20px; }
+        .role { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--primary-beige); opacity: 0.8; }
 
         /* HubSpot Wrapper */
         .hs-form-wrapper {
             background-color: rgba(13, 13, 13, 0.8);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
             padding: 35px;
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
@@ -156,6 +154,7 @@
 
         @media (max-width: 991px) {
             .hero-section { padding-top: 120px; text-align: center; }
+            .stat-item { margin-bottom: 40px; }
         }
     </style>
 </head>
@@ -181,10 +180,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-        <!-- 3D Background Container -->
-        <div id="three-container"></div>
-
+    <section class="hero-section">
+        <div id="canvas-container"></div>
         <div class="container hero-content">
             <div class="row gy-5 align-items-center">
                 <div class="col-lg-6">
@@ -196,7 +193,7 @@
                         Digital Solutions.
                     </h1>
                     <p class="fs-4 mb-5 text-beige opacity-75">
-                        Strategic marketing and high-performance design established to accelerate your business growth.
+                        Strategic marketing and high-performance design established to accelerate your brand's growth.
                     </p>
                     <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
                         <a href="#cta" class="btn btn-outline-beige fs-5 px-5 py-3">Start a Project</a>
@@ -204,10 +201,12 @@
                 </div>
                 <div class="col-lg-5 offset-lg-1">
                     <div class="hs-form-wrapper">
-                        <h5 class="text-beige mb-4 text-center">Inquire Now</h5>
+                        <h5 class="text-beige mb-4 text-center">Free Consultation</h5>
                         <!-- HubSpot Placeholder -->
-                        <div class="text-center p-4 border border-secondary border-dashed rounded text-muted">
-                            HubSpot Form Loader...
+                        <div id="hubspot-form-loader" class="text-center p-4 border border-secondary border-dashed rounded text-muted">
+                            <script charset="utf-8" type="text/javascript" src="https://js-na2.hsforms.net/forms/embed/245176803.js" defer></script>
+                            <div class="hs-form-frame" data-region="na2" data-form-id="afb3c196-306c-4528-ab70-1c77f8b62796" data-portal-id="245176803"></div>
+                            <p class="small mt-2">Loading secure form...</p>
                         </div>
                     </div>
                 </div>
@@ -215,18 +214,41 @@
         </div>
     </section>
 
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 stat-item">
+                    <h2 class="font-amaranth">1,000+</h2>
+                    <p>LinkedIn Connections</p>
+                </div>
+                <div class="col-md-4 stat-item">
+                    <h2 class="font-amaranth">100%</h2>
+                    <p>Project Commitment</p>
+                </div>
+                <div class="col-md-4 stat-item">
+                    <h2 class="font-amaranth">ROI</h2>
+                    <p>Focused Strategy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Me Section -->
-    <section id="about" class="about-me-section">
+    <section id="about" class="py-5 mt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h2 class="display-4 fw-bold mb-5">About Me</h2>
-                    <p class="fs-5 opacity-75 mb-4" style="line-height: 1.8; text-align: justify;">
-                        Hi, I'm <span class="name-highlight">Muhammed Sinan K</span>, a results-driven freelance digital marketer and graphic designer. I help brands grow through strategic SEO, SEM, and creative design. I focus on what matters most—visibility, quality leads, and measurable results.
+                    <h2 class="display-4 fw-bold mb-5 text-beige">About Me</h2>
+                    <p class="fs-5 opacity-75 mb-4 text-start">
+                        Hi, I'm <span class="name-highlight">Muhammed Sinan K</span>, a results-driven freelance digital marketer and graphic designer based in <span class="name-highlight">Malappuram</span>. I help startups, local businesses, and e-commerce brands grow online through strategic SEO, SEM, and Social Media Marketing.
+                    </p>
+                    <p class="fs-5 opacity-75 mb-5 text-start">
+                        What sets me apart is my practical approach and transparent communication. From building your online presence to scaling campaigns that convert, I work as your growth partner to deliver measurable ROI.
                     </p>
                     <div class="border-top border-secondary pt-4">
                         <p class="fw-bold fs-4 text-beige">
-                            Let's scale your brand together.
+                            Scale your brand with a data-driven partner.
                         </p>
                     </div>
                 </div>
@@ -237,39 +259,36 @@
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
-            <h2 class="display-4 text-center fw-bold text-beige mb-5">Our Expertise</h2>
+            <h2 class="display-4 text-center fw-bold text-beige mb-5">Core Services</h2>
             <div class="row g-4 justify-content-center">
-                <div class="col-md-4 col-lg-3">
+                <div class="col-md-6 col-lg-4">
                     <div class="service-card">
-                        <h3 class="service-title">SEO</h3>
+                        <h3 class="service-title">Digital Marketing</h3>
                         <ul class="service-list">
-                            <li>Keyword Research</li>
-                            <li>Technical SEO</li>
-                            <li>Local SEO</li>
+                            <li>SEO & Search Engine Marketing</li>
+                            <li>Social Media Management (Meta/Ads)</li>
+                            <li>Content Strategy & Copywriting</li>
                         </ul>
-                        <a href="#cta" class="btn btn-outline-beige w-100">Book Now</a>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-3">
+                <div class="col-md-6 col-lg-4">
                     <div class="service-card">
-                        <h3 class="service-title">SMM</h3>
+                        <h3 class="service-title">Web Development</h3>
                         <ul class="service-list">
-                            <li>Content Planning</li>
-                            <li>Meta Ads</li>
-                            <li>Analytics</li>
+                            <li>Custom Website Redesign</li>
+                            <li>Responsive & Fast Landing Pages</li>
+                            <li>Conversion Rate Optimization (CRO)</li>
                         </ul>
-                        <a href="#cta" class="btn btn-outline-beige w-100">Book Now</a>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-3">
+                <div class="col-md-6 col-lg-4">
                     <div class="service-card">
-                        <h3 class="service-title">Graphics</h3>
+                        <h3 class="service-title">Graphic Design</h3>
                         <ul class="service-list">
-                            <li>Brand Identity</li>
-                            <li>Social Media Design</li>
-                            <li>Logo Design</li>
+                            <li>Brand Identity & Logo Design</li>
+                            <li>Social Media Ad Creatives</li>
+                            <li>Marketing Collateral & Banners</li>
                         </ul>
-                        <a href="#cta" class="btn btn-outline-beige w-100">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -277,16 +296,16 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="cta-section">
-        <div class="container">
-            <h2 class="display-3 fw-bold mb-4 text-beige">Ready to Scale?</h2>
-            <p class="fs-4 mb-5 opacity-75">Let’s grow your business with data-driven digital strategies.</p>
-            <a href="#" class="btn-consultation">Get Free Consultation</a>
+    <section id="cta" class="py-5 text-center bg-black border-top border-secondary">
+        <div class="container py-5">
+            <h2 class="display-3 fw-bold mb-4 text-beige">Ready to Start?</h2>
+            <p class="fs-4 mb-5 opacity-75">Let’s discuss your project goals today.</p>
+            <a href="#" class="btn btn-outline-beige fs-4 px-5 py-3">Get Started Today</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-5 text-center border-top border-secondary">
+    <footer class="py-5 text-center">
         <div class="container">
             <p class="text-beige opacity-50">&copy; 2025 Muhammed Sinan K. All Rights Reserved.</p>
         </div>
@@ -298,74 +317,60 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // 3D ANIMATION LOGIC
-        let scene, camera, renderer, particles;
+        // THREE.JS CONSTELLATION ANIMATION
+        let scene, camera, renderer, particles, lineMesh;
         let mouseX = 0, mouseY = 0;
+        const particleCount = 100;
 
         function init3D() {
-            const container = document.getElementById('three-container');
-            const width = container.clientWidth;
-            const height = container.clientHeight;
-
-            // 1. Scene setup
+            const container = document.getElementById('canvas-container');
             scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 10;
 
-            // 2. Camera setup
-            camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-            camera.position.z = 5;
-
-            // 3. Renderer
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setSize(width, height);
+            renderer.setSize(container.clientWidth, container.clientHeight);
             renderer.setPixelRatio(window.devicePixelRatio);
             container.appendChild(renderer.domElement);
 
-            // 4. Create Particles (The "Digital Web")
-            const particleCount = 1500;
+            // Particles
             const geometry = new THREE.BufferGeometry();
-            const positions = new Float32Array(particleCount * 3);
-
-            for (let i = 0; i < particleCount * 3; i++) {
-                positions[i] = (Math.random() - 0.5) * 15; // Spread particles
+            const posArray = new Float32Array(particleCount * 3);
+            for(let i = 0; i < particleCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 20;
             }
-
-            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
             const material = new THREE.PointsMaterial({
-                color: 0xd9c8a3, // Beige color
-                size: 0.02,
+                size: 0.05,
+                color: 0xd9c8a3,
                 transparent: true,
-                opacity: 0.6
+                opacity: 0.8
             });
 
             particles = new THREE.Points(geometry, material);
             scene.add(particles);
 
-            // 5. Interaction
-            document.addEventListener('mousemove', (event) => {
-                mouseX = (event.clientX - window.innerWidth / 2) / 100;
-                mouseY = (event.clientY - window.innerHeight / 2) / 100;
+            // Responsive
+            window.addEventListener('resize', () => {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
             });
 
-            // 6. Resize listener
-            window.addEventListener('resize', onWindowResize);
-        }
-
-        function onWindowResize() {
-            const container = document.getElementById('three-container');
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
+            // Interaction
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX - window.innerWidth / 2) / 200;
+                mouseY = (e.clientY - window.innerHeight / 2) / 200;
+            });
         }
 
         function animate() {
             requestAnimationFrame(animate);
+            
+            particles.rotation.y += 0.002;
+            particles.rotation.x += 0.001;
 
-            // Gentle rotation
-            particles.rotation.y += 0.001;
-            particles.rotation.x += 0.0005;
-
-            // Parallax movement based on mouse
             camera.position.x += (mouseX - camera.position.x) * 0.05;
             camera.position.y += (-mouseY - camera.position.y) * 0.05;
             camera.lookAt(scene.position);
@@ -373,7 +378,7 @@
             renderer.render(scene, camera);
         }
 
-        window.onload = function () {
+        window.onload = function() {
             init3D();
             animate();
         };
